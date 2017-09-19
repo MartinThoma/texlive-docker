@@ -1,0 +1,11 @@
+version: '3'  # Version number of the docker-compose file format
+services:
+  texlive:
+    build: .
+    volumes:
+     - packages:/usr/local/texlive/2017
+    environment:
+    - MYSQL_ROOT_PASSWORD=/usr/local/texlive/2017
+volumes:
+    packages:
+        driver: local
